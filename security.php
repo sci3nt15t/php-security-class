@@ -2,7 +2,7 @@
 class security
 {
 	/*
-	* At this point you should choose either start a session or not! also if you consider about checking for bruteforce attacks you should pass 
+	* At this point you should choose either start a session or not! Also if you consider about checking for bruteforce attacks you should pass 
 	* TRUE to the class! for more information refer to documentation!
 	*/
 	
@@ -28,7 +28,7 @@ class security
 				try
 				{
 					/* you can change the max attempts! since the code will not allow other codes to be executed if the attempts are greater than
-					* max_attempts! so change the max_attempts to satisfie your needs! */
+					* max_attempts! so change the max_attempts to satisfies your needs! */
 					
 					$max_attempt = 3;
 					$db = new pdo('mysql:host=localhost;dbname='.db_name,db_user,db_pass);
@@ -51,7 +51,7 @@ class security
 		}
 		
 		/*
-		* i have done my best to bring more secure session with less codes! i didnt want to make it verbose so users wont face any problem! 
+		* I have done my best to bring more secure session with less codes! I didn't want to make it verbose so users wont face any problem! 
 		* for usage and changes refer to documentation!
 		*/
 		
@@ -75,8 +75,8 @@ class security
     	}
     	
 		/*
-		* SAFE_GET will stop sql injection frome being executed! there are more ways! this is the most simple way! WARNING:! this method only
-		* support integer values! char and string are not supported yet!
+		* SAFE_GET will stop SQL injection from being executed! There are more ways! This is the most simple way! WARNING:! This method only
+		* support integer values! Char and string are not supported yet!
 		*/
 	
 	
@@ -88,9 +88,9 @@ class security
 			}
 			
 			
-			/* here is the most useful function of this class! brute function will count and check failed login attempts! you can use it
-			* for other cases but mostly it will be used for login! as i have said before change the max_attempts for your use! i think 3 is
-			* enough but if you want to give more chances to your users...go on!
+			/* here is the most useful function of this class! Brute function will count and check failed login attempts! You can use it
+			* for other cases but mostly it will be used for login! As I have said before change the Max_attempts for your use! I think 3 is
+			* enough but if you want to give more chances to your users...go On!
 			*/
 			
 			function brute()
@@ -127,10 +127,10 @@ class security
 				}
 			}
 			
-			/* debrute function should be used with brute function in two diffrent situations! if the login is successfull! you should use debrute function 
+			/* debrute function should be used with brute function in two different situations! if the login is successful! you should use debrute function 
 			* in order to delete the record of the brute function! and if the login fails you should use brute function in order to record it to database!
-			* WARNING!: since user achive its maximum attempts debrute function will not execute and the user will get banned from your website permanantely!
-			* until you delete the users record manualy! i havnt work on timing yet...i will and you may see this feature soon!
+			* WARNING!: since user achieve its maximum attempts debrute function will not execute and the user will get banned from your website permanently!
+			* until you delete the users record manually! i have not work on timing yet...i will and you may see this feature soon!
 			*/
 			
 			function debrute()
