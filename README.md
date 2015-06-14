@@ -35,17 +35,29 @@ following code will give you better understanding of usages!
 <?php
 include("security.php");
 
+
 $sec = new security(true,true);
 
+
 $sec->secure_session("sci3nt15t");
+
 echo $sec->SAFE_GET("id");
 
+
 if(login() == fail)
+
 {
+
 	$sec->brute();
+	
 }
+
 elseif (login() == successfull)
+
 {
+
 	$sec->debrute();	
+	
 }
+
 ?>
